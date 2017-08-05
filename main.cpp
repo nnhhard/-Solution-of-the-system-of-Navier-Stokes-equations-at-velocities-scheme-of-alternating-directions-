@@ -7,7 +7,7 @@
 
 
 #define n 31
-#define m 11
+#define m 31
 
 double T=200;
 int input = 100;
@@ -129,22 +129,18 @@ double Operator_p(double **p, int i,int j, double hx, double hy)
 
     if( i==0 )
     {
-        //return (p[i][j]+p[i+1][j])/2.0;
         return -1*(p[i+1][j]-p[i][j])/(hx*hx);
     }
     else if( i==n )
     {
-        //return (p[i-1][j]+p[i][j])/2.0;
         return (p[i][j]-p[i-1][j])/(hx*hx);
     }
     else if( j==0 )
     {
-        // j==1 return ( ( p[i+1][j] - 2.0*p[i][j] + p[i-1][j] )/(hx*hx) + ( p[i][j+1] - 1.0*p[i][j]             )/(hy*hy) );
         return -1*(p[i][j+1]-p[i][j])/(hy*hy);
     }
     else if( j== m )
     {
-        //return ( ( p[i+1][j] - 2.0*p[i][j] + p[i-1][j] )/(hx*hx) + (           - 1.0*p[i][j] + p[i][j-1] )/(hy*hy) );
         return (p[i][j]-p[i][j-1])/(hy*hy);
     }
     else
@@ -637,6 +633,9 @@ int main()
 
         p[n/2][0]=0;
         Solve_p(p,u,v,hx,hy);
+
+        printf("\nNei = %2.20lf\n",(p[n/2][1]-p[n/2][0])/(hy));
+        getch();
 
         for(int i=0;i<=uN;i++)
             for(int j=0;j<=uM;j++)

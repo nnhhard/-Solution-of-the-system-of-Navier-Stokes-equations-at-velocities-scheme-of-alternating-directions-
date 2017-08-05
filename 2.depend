@@ -162,3 +162,10 @@
 
 1501340740 c:\work\project\ns at speeds (scheme of alternating directions)\solvers.h
 
+1501942162 source:c:\work\project\ns at speeds (scheme of alternating directions)\main.cpp
+	<stdio.h>
+	<math.h>
+	<conio.h>
+	"Solvers.h"
+	"Derivative.h"
+
